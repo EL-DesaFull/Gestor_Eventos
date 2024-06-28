@@ -10,7 +10,7 @@ namespace GestorEventos.Cliente.Controllers
     {
         private readonly HttpClient _httpClient;
 
-        public EventoController(IHttpClientFactory httpClientFactory) 
+        public EventoController(IHttpClientFactory httpClientFactory)
         {
             _httpClient = httpClientFactory.CreateClient();
             _httpClient.BaseAddress = new Uri("https://localhost:44391/api");
@@ -23,14 +23,14 @@ namespace GestorEventos.Cliente.Controllers
             {
                 var content = await response.Content.ReadAsStringAsync();
                 var eventos = JsonConvert.DeserializeObject<IEnumerable<Eventos>>(content);
-                return View("Index",eventos);
+                return View("Index", eventos);
             }
 
             return View(new List<Eventos>());
         }
 
-        public IActionResult Create() 
-        { 
+        public IActionResult Create()
+        {
             return View();
         }
 
@@ -44,15 +44,87 @@ namespace GestorEventos.Cliente.Controllers
 
                 var response = await _httpClient.PostAsync("/api/Evento", content);
 
-                if (response.IsSuccessStatusCode) 
-                { 
+                if (response.IsSuccessStatusCode)
+                {
                     return RedirectToAction("Index");
-                } else
+                }
+                else
                 {
                     ModelState.AddModelError(string.Empty, "Error al crear el evento, valide los campos.");
                 }
             }
             return View(evento);
+        }
+
+        public async Task<IActionResult> Edit(int id)
+        {
+            var response = await _httpClient.GetAsync($"/api/Evento/id:int?id={id}");
+            if (response.IsSuccessStatusCode)
+            {
+                var content = await response.Content.ReadAsStringAsync();
+                var evento = JsonConvert.DeserializeObject<Eventos>(content);
+
+                return View(evento);
+            }
+            else
+            {
+                return RedirectToAction("Details");
+            }
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(int id, Eventos evento)
+        {
+            if (ModelState.IsValid)
+            {
+                var json = JsonConvert.SerializeObject(evento);
+
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+                var response = await _httpClient.PutAsync($"/api/Evento/{id}", content);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    return RedirectToAction("Index", new { id });
+                }
+                else
+                {
+                    ModelState.AddModelError(string.Empty, "Error al actualizar el evento");
+                }
+            }
+            return View(evento);
+        }
+
+        public async Task<IActionResult> Details(int id)
+        {
+            var response = await _httpClient.GetAsync($"/api/Evento/id:int?id={id}");
+
+            if (response.IsSuccessStatusCode) 
+            {
+                var content = await response.Content.ReadAsStringAsync();
+                var evento = JsonConvert.DeserializeObject<Eventos>(content);
+
+                return View(evento);
+            }
+            else
+            {
+                return RedirectToAction("Details");
+            }
+        }
+
+        public async Task<IActionResult> Delete(int id)
+        {
+            var response = await _httpClient.DeleteAsync($"/api/Evento/{id}");
+
+            if (response.IsSuccessStatusCode)
+            {
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                TempData["Error"] = "Error al eliminar el evento";
+                return RedirectToAction("Index");
+            }
         }
     }
 }

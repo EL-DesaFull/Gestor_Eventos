@@ -1,0 +1,109 @@
+﻿@model GestorEventos.Cliente.Models.Eventos
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="card text-primary">
+    <div class="card-header text-center">
+        <h5>Detalle del Evento @Html.DisplayFor(model => model.eventName)</h5>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <hr />
+                    </div>
+                    <div class="panel-body">
+                        <table class="table table-hover table-responsive table-striped" id="Eventos" width="50%">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Descripcion del Evento</th>
+                                    <th scope="col">Fecha de Inicio</th>
+                                    <th scope="col">Fecha de Culminacion</th>
+                                    <th scope="col">Estatus</th>
+                                </tr>
+                            </thead>
+                            <tbody class="table-hover">                                
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(model => model.eventDescription)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(model => model.startDate)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(model => model.endDate)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(model => model.eventStatus)
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="panel-footer">
+                        <a asp-action="Index" class="btn btn-success float-start">Regresar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer text-muted text-center">
+        Crud Eventos
+    </div>
+</div>
+
+
+
+
+
+
+
+@* <h1>Details</h1> *@
+
+@* <div>
+    <h4>Eventos</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.eventId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.eventId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.eventName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.eventName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.eventDescription)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.eventDescription)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.startDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.startDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.endDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.endDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.eventStatus)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.eventStatus)
+        </dd>
+    </dl>
+</div>
+ *@

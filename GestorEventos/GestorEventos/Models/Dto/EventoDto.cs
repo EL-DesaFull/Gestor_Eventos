@@ -8,10 +8,10 @@ namespace GestorEventos.Models.Dto
     {
         public int eventId { get; set; }
         [Required]
-        [MaxLength(30, ErrorMessage = "El campo {0} debe tener maximo {1} caracteres")]
+        [MaxLength(50, ErrorMessage = "El campo {0} debe tener maximo {1} caracteres")]
         public string eventName { get; set; }
         [Required]
-        [MaxLength(100, ErrorMessage = "El campo {0} debe tener maximo {1} caracteres")]
+        [MaxLength(150, ErrorMessage = "El campo {0} debe tener maximo {1} caracteres")]
         public string eventDescription { get; set; }
         [Required]
         public string startDate { get; set; }

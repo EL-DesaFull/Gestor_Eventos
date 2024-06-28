@@ -1,1 +1,74 @@
-[{"eventId":1,"eventName":"Conferencia Anual de Tecnología","eventDescription":"Sumérgete en el mundo de la innovación tecnológica junto a expertos y entusiastas.","startDate":"2024-07-20","endDate":"2024-07-22","eventStatus":"Confirmado"},{"eventId":2,"eventName":"Festival Internacional de Música","eventDescription":"Disfruta de un espectáculo multicultural con artistas de renombre provenientes de todo el mundo.","startDate":"2024-08-10","endDate":"2024-08-15","eventStatus":"Proximamente"},{"eventId":3,"eventName":"Feria del Libro y Exposición de Autores","eventDescription":"Un paraíso para los amantes de la literatura. Conoce a tus autores favoritos, participa en talleres y asiste a firmas de libros.","startDate":"2024-10-12","endDate":"2024-10-16","eventStatus":"Confirmado"},{"eventId":4,"eventName":"Exhibición de Arte y Gala","eventDescription":"Déjate deslumbrar por obras maestras de artistas reconocidos y culmina la experiencia con una noche de gala inolvidable.","startDate":"2024-11-18","endDate":"2024-11-20","eventStatus":"Proximamente"},{"eventId":5,"eventName":"Taller de cocina internacional","eventDescription":"Aprende a preparar deliciosos platillos de distintas culturas.","startDate":null,"endDate":null,"eventStatus":"Proximamente"},{"eventId":6,"eventName":"Cine bajo las estrellas","eventDescription":"Disfruta de un clásico del cine al aire libre.","startDate":null,"endDate":null,"eventStatus":"Proximamente"},{"eventId":7,"eventName":"Festival de comedia","eventDescription":"Reúnete con amigos y prepárate para reír sin parar con un show de stand-up comedy.","startDate":null,"endDate":null,"eventStatus":"Proximamente"},{"eventId":8,"eventName":"Maratón deportivo","eventDescription":"Ponte a prueba y participa en una carrera para todos los niveles.","startDate":null,"endDate":null,"eventStatus":"Cancelado"},{"eventId":9,"eventName":"Conferencia sobre medio ambiente","eventDescription":"Infórmate sobre los desafíos y soluciones para un planeta más sostenible.","startDate":null,"endDate":null,"eventStatus":"Cancelado"},{"eventId":10,"eventName":"Evento sorpresa","eventDescription":"¡Prepárate para algo inesperado! Más detalles Proximamente.","startDate":null,"endDate":null,"eventStatus":"Proximamente"},{"eventId":11,"eventName":"Mantenimiento","eventDescription":"Mantenimiento","startDate":"2024-12-15","endDate":"2024-12-18","eventStatus":"Confirmado"},{"eventId":12,"eventName":"Pruebas de Sistemas","eventDescription":"Esto es una prueba del sistema para validar que todo vaya bien","startDate":"2024-06-28","endDate":"2024-06-28","eventStatus":"Confirmado"},{"eventId":13,"eventName":"gjfkirgjkirtji","eventDescription":"ewe4tetee","startDate":"2024-06-28","endDate":"2024-06-28","eventStatus":"Seleccione una opcion..."},{"eventId":14,"eventName":"dddd","eventDescription":"dddd","startDate":"2024-06-28","endDate":"2024-06-28","eventStatus":"Confirmado"}]
+[
+  {
+    "eventId": 2,
+    "eventName": "Festival de Música",
+    "eventDescription": "Disfruta de un espectáculo.",
+    "startDate": "2024-08-10",
+    "endDate": "2024-08-15",
+    "eventStatus": "Confirmado"
+  },
+  {
+    "eventId": 3,
+    "eventName": "Feria del Libro y Exposición de Autores",
+    "eventDescription": "Un paraíso para los amantes de la literatura. Conoce a tus autores favoritos, participa en talleres y asiste a firmas de libros.",
+    "startDate": "2024-10-12",
+    "endDate": "2024-10-16",
+    "eventStatus": "Confirmado"
+  },
+  {
+    "eventId": 4,
+    "eventName": "Exhibición de Arte y Gala",
+    "eventDescription": "Déjate deslumbrar por obras maestras de artistas reconocidos.",
+    "startDate": "2024-11-18",
+    "endDate": "2024-11-20",
+    "eventStatus": "Confirmado"
+  },
+  {
+    "eventId": 5,
+    "eventName": "Taller de cocina internacional",
+    "eventDescription": "Aprende a preparar deliciosos platillos de distintas culturas.",
+    "startDate": "2024-08-21",
+    "endDate": "2024-08-31",
+    "eventStatus": "Proximamente"
+  },
+  {
+    "eventId": 6,
+    "eventName": "Cine bajo las estrellas",
+    "eventDescription": "Disfruta de un clásico del cine al aire libre.",
+    "startDate": null,
+    "endDate": null,
+    "eventStatus": "Proximamente"
+  },
+  {
+    "eventId": 7,
+    "eventName": "Festival de comedia",
+    "eventDescription": "Reúnete con amigos y prepárate para reír sin parar con un show de stand-up comedy.",
+    "startDate": null,
+    "endDate": null,
+    "eventStatus": "Proximamente"
+  },
+  {
+    "eventId": 8,
+    "eventName": "Maratón deportivo",
+    "eventDescription": "Ponte a prueba y participa en una carrera para todos los niveles.",
+    "startDate": "2024-12-28",
+    "endDate": "2024-12-28",
+    "eventStatus": "Cancelado"
+  },
+  {
+    "eventId": 9,
+    "eventName": "Conferencia sobre medio ambiente",
+    "eventDescription": "Infórmate sobre los desafíos y soluciones para un planeta más sostenible.",
+    "startDate": null,
+    "endDate": null,
+    "eventStatus": "Cancelado"
+  },
+  {
+    "eventId": 10,
+    "eventName": "Evento sorpresa",
+    "eventDescription": "¡Prepárate para algo inesperado! Más detalles Proximamente.",
+    "startDate": "2024-06-28",
+    "endDate": "2024-06-28",
+    "eventStatus": "Cancelado"
+  }
+]

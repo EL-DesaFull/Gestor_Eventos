@@ -7,11 +7,11 @@ namespace GestorEventos.Cliente.Models
         public int eventId { get; set; }
         
         [Required(ErrorMessage ="Este campo es requerido")]
-        [MaxLength(30, ErrorMessage = "El campo {0} debe tener maximo {1} caracteres")]
+        [MaxLength(50, ErrorMessage = "El campo {0} debe tener maximo {1} caracteres")]
         public string eventName { get; set; }
         
         [Required(ErrorMessage = "Este campo es requerido")]
-        [MaxLength(100, ErrorMessage = "El campo {0} debe tener maximo {1} caracteres")]
+        [MaxLength(150, ErrorMessage = "El campo {0} debe tener maximo {1} caracteres")]
         public string eventDescription { get; set; }
         
         [Required(ErrorMessage = "Este campo es requerido")]

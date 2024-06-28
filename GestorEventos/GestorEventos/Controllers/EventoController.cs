@@ -5,6 +5,7 @@ using GestorEventos.Models.Dto;
 using GestorEventos.Datos;
 using Microsoft.AspNetCore.JsonPatch;
 using Newtonsoft.Json;
+using System.Text.Json.Nodes;
 
 namespace GestorEventos.Controllers
 {
@@ -112,6 +113,21 @@ namespace GestorEventos.Controllers
                 return NotFound();
             }
 
+            string filePath = ObtenerUrl("JsonUrl");
+            string json = System.IO.File.ReadAllText(filePath);
+            dynamic data = JsonConvert.DeserializeObject<dynamic>(json);
+            foreach (var item in data)
+            {
+                if (item["eventId"] == id)
+                {
+                    data.Remove(item);
+                    break;
+                }
+            }
+
+            string updatedJson = JsonConvert.SerializeObject(data);
+            System.IO.File.WriteAllText(filePath, updatedJson);
+
             StoredEvents.eventoList.Remove(evento);
 
             return NoContent();
@@ -135,6 +151,24 @@ namespace GestorEventos.Controllers
             evento.startDate = eventoDto.startDate;
             evento.endDate = eventoDto.endDate;
             evento.eventStatus = eventoDto.eventStatus;
+
+            string filePath = ObtenerUrl("JsonUrl");
+            string json = System.IO.File.ReadAllText(filePath);
+            dynamic data = JsonConvert.DeserializeObject<dynamic>(json);
+
+            foreach (var item in data)
+            {
+                if (item["eventId"] == id)
+                {
+                    item["eventName"] = evento.eventName;
+                    item["eventDescription"] = evento.eventDescription;
+                    item["startDate"] = evento.startDate;
+                    item["endDate"] = evento.endDate;
+                    item["eventStatus"] = evento.eventStatus;
+                    System.IO.File.WriteAllText(filePath, data.ToString());
+                }
+            }
+
 
             return NoContent();
         }
