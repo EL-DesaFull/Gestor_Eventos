@@ -1,0 +1,75 @@
+﻿@model IEnumerable<GestorEventos.Cliente.Models.EventoViewModel>
+
+<div class="card text-primary">
+    <div class="card-header text-center">
+        <h5>Listado de Eventos</h5>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <a asp-action="Create" class="btn btn-outline-info btn-sm">
+                            <img src="~/images/new-icon.png" alt="Nuevo" width="59" height="59">
+                        </a>
+                        <hr />
+                    </div>
+                    <div class="panel-body">
+                        <table class="table table-hover table-responsive table-striped" id="Eventos" width="50%">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Inicio</th>
+                                    <th scope="col">Estatus</th>
+                                    <th scope="col">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody class="table-hover">
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.eventName)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.startDate)
+                                        </td>
+                                        <td>
+                                            @if (item.eventStatus == "Confirmado")
+                                            {
+                                                <img src="~/images/confirmed-icon.png" alt="Confirmado" title="Confirmado" width="30" height="30" />
+                                            }
+                                            @if (item.eventStatus == "Proximamente")
+                                            {
+                                                <img src="~/images/standby-icon.png" alt = "Proximamente" title = "Proximamente" width = "30" height = "30" />
+                                            }
+                                            @if (item.eventStatus == "Cancelado")
+                                            {
+                                                <img src="~/images/cancel-icon.png" alt = "Cancelado" title = "Cancelado" width = "30" height = "30" />
+                                            }
+                                        </td>
+
+                                        <td>
+                                            <a asp-action="Edit" asp-route-id="@item.eventId" class="btn btn-outline-warning btn-sm">
+                                                <img src="~/images/edit-icon.png" alt="Editar" width="25" height="25">
+                                            </a>
+                                            <a asp-action="Details" asp-route-id="@item.eventId" class="btn btn-outline-info btn-sm">
+                                                <img src="~/images/details-icon.png" alt="Detalle" width="25" height="25">
+                                            </a>
+                                            <a asp-action="Delete" asp-route-id="@item.eventId" class="btn btn-outline-danger btn-sm">
+                                                <img src="~/images/delete-icon.png" alt="Eliminar" width="25" height="25">
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer text-muted text-center">
+        Crud Eventos
+    </div>
+</div>
