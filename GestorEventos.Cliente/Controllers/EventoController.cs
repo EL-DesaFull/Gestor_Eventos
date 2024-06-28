@@ -1,6 +1,7 @@
 ﻿using GestorEventos.Cliente.Models;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using System.Text;
 using System.Text.Json.Serialization;
 
 namespace GestorEventos.Cliente.Controllers
@@ -21,11 +22,37 @@ namespace GestorEventos.Cliente.Controllers
             if (response.IsSuccessStatusCode)
             {
                 var content = await response.Content.ReadAsStringAsync();
-                var eventos = JsonConvert.DeserializeObject<IEnumerable<EventoViewModel>>(content);
+                var eventos = JsonConvert.DeserializeObject<IEnumerable<Eventos>>(content);
                 return View("Index",eventos);
             }
 
-            return View(new List<EventoViewModel>());
+            return View(new List<Eventos>());
+        }
+
+        public IActionResult Create() 
+        { 
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Create(Eventos evento)
+        {
+            if (ModelState.IsValid)
+            {
+                var json = JsonConvert.SerializeObject(evento);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+                var response = await _httpClient.PostAsync("/api/Evento", content);
+
+                if (response.IsSuccessStatusCode) 
+                { 
+                    return RedirectToAction("Index");
+                } else
+                {
+                    ModelState.AddModelError(string.Empty, "Error al crear el evento, valide los campos.");
+                }
+            }
+            return View(evento);
         }
     }
 }

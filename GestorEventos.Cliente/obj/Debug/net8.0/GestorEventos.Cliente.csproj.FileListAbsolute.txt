@@ -207,6 +207,7 @@ D:\CIT\GestorEventos.Cliente\obj\Debug\net8.0\GestorEventos.Cliente.csproj.CoreC
 D:\CIT\GestorEventos.Cliente\obj\Debug\net8.0\GestorEventos.Cliente.MvcApplicationPartsAssemblyInfo.cache
 D:\CIT\GestorEventos.Cliente\obj\Debug\net8.0\GestorEventos.Cliente.RazorAssemblyInfo.cache
 D:\CIT\GestorEventos.Cliente\obj\Debug\net8.0\GestorEventos.Cliente.RazorAssemblyInfo.cs
+D:\CIT\GestorEventos.Cliente\obj\Debug\net8.0\GestorEventos.Cliente.sourcelink.json
 D:\CIT\GestorEventos.Cliente\obj\Debug\net8.0\staticwebassets.build.json
 D:\CIT\GestorEventos.Cliente\obj\Debug\net8.0\staticwebassets.development.json
 D:\CIT\GestorEventos.Cliente\obj\Debug\net8.0\staticwebassets\msbuild.GestorEventos.Cliente.Microsoft.AspNetCore.StaticWebAssets.props

@@ -26,8 +26,8 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\CIT\GestorEventos.Cliente
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/CIT/GestorEventos.Cliente/Views/Evento/CrearEvento.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRvXENyZWFyRXZlbnRvLmNzaHRtbA==
+[D:/CIT/GestorEventos.Cliente/Views/Evento/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRvXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/CIT/GestorEventos.Cliente/Views/Evento/Index.cshtml]

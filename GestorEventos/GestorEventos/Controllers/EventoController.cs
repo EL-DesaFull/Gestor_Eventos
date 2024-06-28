@@ -4,6 +4,7 @@ using GestorEventos.Models;
 using GestorEventos.Models.Dto;
 using GestorEventos.Datos;
 using Microsoft.AspNetCore.JsonPatch;
+using Newtonsoft.Json;
 
 namespace GestorEventos.Controllers
 {
@@ -13,11 +14,16 @@ namespace GestorEventos.Controllers
     {
 
         private readonly ILogger<EventoController> _logger;
-        
+        private readonly IConfiguration _configuration;
 
-        public EventoController(ILogger<EventoController> logger)
+
+        public EventoController(
+            ILogger<EventoController> logger,
+            IConfiguration configuration
+            )
         {
             _logger = logger;
+            _configuration = configuration;
             StoredEvents.cargarEventoList();
         }
 
@@ -82,6 +88,9 @@ namespace GestorEventos.Controllers
 
             eventoDto.eventId=StoredEvents.eventoList.OrderByDescending(x => x.eventId).FirstOrDefault().eventId + 1;
             StoredEvents.eventoList.Add(eventoDto);
+            string json = JsonConvert.SerializeObject(StoredEvents.eventoList);
+            string path = ObtenerUrl("JsonUrl");
+            System.IO.File.WriteAllText(path, json);
             return CreatedAtRoute("GetEvento", new {id = eventoDto.eventId}, eventoDto);
         }
 
@@ -150,6 +159,11 @@ namespace GestorEventos.Controllers
             }
 
             return NoContent();
+        }
+
+        private string ObtenerUrl(string valorAppSettings)
+        {
+            return $"{_configuration.GetValue<string>(valorAppSettings)}";
         }
     }
 }
